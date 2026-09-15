@@ -1,0 +1,3 @@
+Before: [('O1004', 'PENDING')]
+Rows updated: 1
+After: [('O1004', 'PAID')]

@@ -1,0 +1,3 @@
+source	line_count	revenue
+fact_sales (pre-JOIN)	8	1390
+sales (post-JOIN)	8	1390

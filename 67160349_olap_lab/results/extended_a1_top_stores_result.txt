@@ -1,0 +1,4 @@
+store_name	province	revenue
+Nimman	Chiang Mai	145280
+Pattaya	Chonburi	141215
+Muang Rayong	Rayong	136710
