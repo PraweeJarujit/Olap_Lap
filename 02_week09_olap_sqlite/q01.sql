@@ -1,0 +1,6 @@
+-- 2.2 ตรวจ Grain: COUNT(*)=จำนวนรายการ, COUNT(DISTINCT order_id)=จำนวนออเดอร์, SUM(quantity)=ชิ้น, SUM(amount)=บาท
+SELECT COUNT(*) AS line_count,
+       COUNT(DISTINCT order_id) AS order_count,
+       SUM(quantity) AS units,
+       SUM(amount) AS revenue
+FROM sales;

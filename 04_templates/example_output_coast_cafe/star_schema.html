@@ -1,0 +1,42 @@
+<!doctype html><meta charset='utf-8'><title>Star Schema</title><script src='https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js'></script><pre class='mermaid'>erDiagram
+    dim_date {
+        INTEGER date_key PK
+        DATE full_date
+        BIGINT year
+        BIGINT quarter
+        BIGINT month_no
+        VARCHAR month
+        BIGINT day_of_week
+        VARCHAR day_name
+        VARCHAR day_type
+    }
+    dim_customer {
+        BIGINT customer_key PK
+        VARCHAR customer_id
+        VARCHAR customer_name
+        VARCHAR province
+        VARCHAR segment
+    }
+    dim_product {
+        BIGINT product_key PK
+        VARCHAR product_id
+        VARCHAR product_name
+        VARCHAR category
+    }
+    dim_channel {
+        BIGINT channel_key PK
+        VARCHAR channel
+    }
+    fact_sales {
+        VARCHAR order_id
+        INTEGER date_key FK
+        BIGINT customer_key FK
+        BIGINT product_key FK
+        BIGINT channel_key FK
+        BIGINT quantity
+        DOUBLE net_sales
+    }
+    dim_date ||--o{ fact_sales : "date_key"
+    dim_customer ||--o{ fact_sales : "customer_key"
+    dim_product ||--o{ fact_sales : "product_key"
+    dim_channel ||--o{ fact_sales : "channel_key"</pre><script>mermaid.initialize({startOnLoad:true})</script>
