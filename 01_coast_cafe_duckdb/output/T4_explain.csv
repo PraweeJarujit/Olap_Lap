@@ -1,0 +1,39 @@
+﻿explain_key,explain_value
+physical_plan,"╭─ Projection ─────────────────────────────╮
+│ Projections:                             │
+│ #0, __internal_decompress_string(#1), #2 │
+│ ~8 rows                                  │
+╰─────────────────────┬────────────────────╯
+╭─ Hash Group By ─────┴────────────────────╮
+│ Groups: #0, #1                           │
+│ Aggregates: sum(#2)                      │
+│ ~8 rows                                  │
+╰─────────────────────┬────────────────────╯
+╭─ Projection ────────┴────────────────────╮
+│ Projections:                             │
+│ strftime(order_date, '%Y-%m'),           │
+│ product_id, net_sales                    │
+│ ~120 rows                                │
+╰─────────────────────┬────────────────────╯
+╭─ Projection ────────┴────────────────────╮
+│ Projections:                             │
+│ #0,                                      │
+│ __internal_compress_string_uinteger(#1), │
+│ #2                                       │
+│ ~120 rows                                │
+╰─────────────────────┬────────────────────╯
+╭─ Projection ────────┴────────────────────╮
+│ Projections: order_date, product_id,     │
+│              net_sales                   │
+│ ~120 rows                                │
+╰─────────────────────┬────────────────────╯
+╭─ Seq Scan ──────────┴────────────────────╮
+│ Table: coast_cafe.main.orders            │
+│ Type: Sequential Scan                    │
+│ Projections: order_date, product_id,     │
+│              quantity, unit_price,       │
+│              discount_pct                │
+│ Filters: status = 'Completed'            │
+│ ~120 rows                                │
+╰──────────────────────────────────────────╯
+"

@@ -1,0 +1,4 @@
+﻿order_id,customer_id,product_id,quantity,issue_and_action
+X0001,,P01,2,missing customer_id → ส่งไป reject / ใส่ Unknown member (customer_key=-1)
+X0002,C001,P01,-3,quantity <= 0 → reject / ตรวจว่าเป็นการคืนสินค้าหรือไม่
+X0003,C001,P99,1,"unknown product_id → reject, แจ้งเจ้าของ product master"

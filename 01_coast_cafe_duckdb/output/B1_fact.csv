@@ -1,0 +1,3 @@
+﻿source,n_rows,net_sales
+fact_sales (view เดิม),225,37580.25
+fact_sales_star,225,37580.25

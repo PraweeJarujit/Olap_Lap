@@ -1,0 +1,8 @@
+﻿day_of_week,day_name,day_type,n_orders,revenue
+0,Sun,Weekend,38,6161.9
+1,Mon,Weekday,26,4324.55
+2,Tue,Weekday,31,5288.55
+3,Wed,Weekday,39,6036.3
+4,Thu,Weekday,29,4213.5
+5,Fri,Weekday,29,5603.75
+6,Sat,Weekend,33,5951.7

@@ -1,0 +1,46 @@
+erDiagram
+    dim_date {
+        INTEGER date_key PK "YYYYMMDD"
+        DATE full_date
+        INTEGER year
+        INTEGER quarter
+        VARCHAR month "YYYY-MM"
+        VARCHAR day_name
+        VARCHAR day_type "Weekday/Weekend"
+    }
+    dim_customer {
+        INTEGER customer_key PK "surrogate"
+        VARCHAR customer_id "natural key"
+        VARCHAR customer_name
+        VARCHAR province
+        VARCHAR segment "Member/Walk-in"
+    }
+    dim_product {
+        INTEGER product_key PK
+        VARCHAR product_id
+        VARCHAR product_name
+        VARCHAR category
+        DECIMAL list_price
+        DECIMAL unit_cost
+    }
+    dim_channel {
+        INTEGER channel_key PK
+        VARCHAR channel "หน้าร้าน/เดลิเวอรี/ออนไลน์"
+    }
+    fact_sales {
+        VARCHAR order_id "degenerate dim, grain = 1 order"
+        INTEGER date_key FK
+        INTEGER customer_key FK
+        INTEGER product_key FK
+        INTEGER channel_key FK
+        INTEGER quantity "additive"
+        DECIMAL unit_price "non-additive"
+        DECIMAL discount_pct "non-additive"
+        DECIMAL gross_sales "additive"
+        DECIMAL net_sales "additive"
+        DECIMAL gross_profit "additive"
+    }
+    dim_date     ||--o{ fact_sales : "1:N date_key"
+    dim_customer ||--o{ fact_sales : "1:N customer_key"
+    dim_product  ||--o{ fact_sales : "1:N product_key"
+    dim_channel  ||--o{ fact_sales : "1:N channel_key"

@@ -1,0 +1,10 @@
+﻿check_name,n_bad
+customer_id หาย (NULL/ว่าง),0
+customer_id ไม่พบใน customers,0
+"quantity ไม่สมเหตุสมผล (NULL, <=0, >20)",0
+product_id ไม่พบใน products,0
+order_id ซ้ำ,0
+discount_pct นอกช่วง 0-100,0
+unit_price ไม่ตรง list_price,0
+status นอกเหนือ Completed/Cancelled,0
+order_date นอกช่วง ก.ค.-ก.ย. 2026,0

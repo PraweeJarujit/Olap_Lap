@@ -1,0 +1,6 @@
+﻿customer_id,customer_name,province,segment,n_orders,total_spent
+C008,ลูกค้า 008,ชลบุรี,Walk-in,9,1734.1
+C039,ลูกค้า 039,ฉะเชิงเทรา,Walk-in,9,1557.7
+C031,ลูกค้า 031,ฉะเชิงเทรา,Walk-in,8,1483.05
+C020,ลูกค้า 020,ฉะเชิงเทรา,Member,7,1467.0
+C026,ลูกค้า 026,ชลบุรี,Walk-in,12,1451.95

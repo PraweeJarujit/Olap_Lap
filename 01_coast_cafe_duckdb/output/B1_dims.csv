@@ -1,0 +1,5 @@
+﻿tbl,n_rows
+dim_date,92
+dim_customer,40
+dim_product,8
+dim_channel,3
